@@ -1,0 +1,45 @@
+/*Header Right*/
+
+.top-right,.top-left {
+	margin-top:55px;
+	.widget .columns{
+		margin-bottom:0px;
+	}
+	.right,.left {
+		color:$secondary;
+		font-size:16px;
+		font-weight:700;
+		line-height:1.6;
+		span {
+			color:$c3;
+			font-weight:normal;
+			font-size:14px;
+			display:block;
+		}
+	}
+	i {
+		font-size:18px;
+		float:left;
+		color:$primary;
+		width:45px;
+		height:45px;
+		line-height:40px;
+		transform:rotate(90deg);
+		text-align:center;
+		border:1px solid $c3;
+		border-radius:25px;
+		margin-right:15px;
+	}
+
+}
+.top-left {
+	.left {
+		text-align:right;
+	}
+	i {
+		float:right;
+		margin-left:15px;
+		margin-right:0px;
+		transform:rotate(-90deg);
+	}
+}

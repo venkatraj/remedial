@@ -1,0 +1,166 @@
+.flexslider {
+  border: 0 !important;   
+  margin-bottom: 0; 
+  @include box-shadow(inset,0,0,0,transparent !important);
+  @include border-radius(0px !important);
+  background: transparent !important;
+  
+  .slides > li { 
+    @include position(relative);
+  }
+
+  .flex-direction-nav {
+    li {
+      border: 0 !important;
+      padding: 0;
+    }
+
+    a {
+      margin: 0;
+      text-align: center;
+      top: 45%;    
+      opacity:1;
+      overflow: visible;    
+      @include size(45px, 45px);
+      @include font-size(0);
+      line-height: 45px;
+      background: $secondary; 
+      &:before {
+        @include font-size(2.0);
+        font-weight:600;
+        color: $white;
+        font-family: "FontAwesome";
+      }
+      &:hover {
+        background-color: $primary;
+        &:before {
+          color: $white;
+        }       
+      }     
+    }
+
+    a.flex-prev {
+      left:0px;
+      &:before {
+        content:"\f177";
+      } 
+      &:after {
+        left: 5px;
+      }    
+    }
+
+    a.flex-next {
+      text-align: center;
+      right:0px;
+       &:before {
+        content:"\f178";
+      } 
+      &:after {
+        right: 5px;
+      } 
+    }
+
+
+  }
+
+  .flex-control-nav {
+    text-align: right;
+    bottom: 0;
+    li {
+      display: block;
+      float: left;
+      margin: 0;
+    }
+   
+  }
+
+  ol.flex-control-paging {
+    text-align: center;
+    bottom: 15px;
+    z-index: 10;
+    li {
+      float: none;
+      display: inline;
+      padding:0px;
+      a {
+        display: inline-block;
+        @include border-radius(25px !important);
+        background-color: $white;
+        border: 1px solid $white !important;
+        text-indent: -9999em !important;
+        margin: 0 3px;
+        box-shadow:none;
+      }
+
+      a.flex-active,a:hover {
+        border: 1px solid $white!important;
+        border-radius: 25px;
+        background-color:transparent;
+
+      }
+
+    }
+  }
+
+  &:hover {
+    .flex-direction-nav {
+
+      a.flex-prev {
+        left:0px;
+       
+        opacity:1;
+      }
+
+      a.flex-next {
+        right:0px;
+        
+         opacity:1;
+      }
+    }
+  }
+}
+
+
+
+.flexslider {
+  .flex-caption {
+      position: absolute;
+      top: 20%;
+      left:7%;
+      color: $white;
+      width:50%;
+      padding:30px 50px 20px 40px;
+      text-align: left;
+      margin:0 auto;
+      background:rgba($secondary,0.75);
+        h1,h2,h4,h5,h6 {
+          color: $white;
+          position: relative;
+          line-height:normal;
+        }
+
+        p {
+          @include font-size(1.6);
+        }
+
+    p a {
+          color: $white;
+          padding: 10px 40px; 
+          //margin: 10px;
+          font-weight: 600;
+          display: inline-block;
+          text-align: center;
+          background:$primary;
+          text-transform:uppercase;
+          
+          &:hover {
+             background-color: $white;
+             color: $secondary; 
+             &:after {
+                color:$secondary;
+             }
+          }
+      }
+
+  }
+}

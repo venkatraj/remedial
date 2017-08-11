@@ -1,0 +1,99 @@
+
+.branding {     
+	
+
+	.site-branding {
+		text-align: center;
+		position: relative;
+    padding:10px 0px;
+		margin:15px 0px;
+		.site-description {
+			@include font-size(1.4);
+			color: $c3;
+			font-family: $copy_font;
+			padding: 0px 10px 10px 0px;
+			position: relative;
+			margin-bottom:0;
+			margin-top: -12px;
+			
+		} 
+
+		.site-title {
+			margin-bottom: 0;
+			a {
+				display: block;
+        color:$secondary;
+			}
+			
+			a:hover {
+				color: $primary;
+			}
+		}	
+
+	}
+}
+
+.sticky-nav {
+ 	position: fixed;
+	top: -2px;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+}
+.admin-bar .nav-wrap.sticky-nav {
+   top: 30px;
+}
+
+.no-sidebar {
+ 	float: none;
+ 	margin: 0 auto;
+ 	display: block;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background:#272727;
+  position: relative;
+  text-align:center;
+  padding:60px 0px;
+  margin-top: 0;
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  h2 {
+    color: $white;
+    margin-bottom:0;
+  }
+  .breadcrumb-text {
+    font-size:16px; 
+    display:inline-block;
+    color: $white;
+    text-transform:capitalize;
+    padding:10px 20px;
+  }
+   
+    #crumbs{
+    display:inline-block;
+      span {
+      	padding:0px 5px;
+      }
+    }
+
+}
+
+
+.blog {
+  .site-header {
+    border-bottom:2px solid $c2;
+  }
+}
+
+
+
+
+@import "top-header";

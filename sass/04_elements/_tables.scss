@@ -1,0 +1,21 @@
+table {
+	
+	margin: 0 0 1.5em;
+	width: 100%;
+	
+	th {
+		font-family: $heading_font;
+		text-transform: uppercase;	
+		a {
+			font-weight: 400;
+		}
+	}
+
+	td, th {
+		border-bottom: 1px solid $c1;
+		padding:10px;
+	}
+	thead tr th {
+		font-weight:700;
+	}	
+}
