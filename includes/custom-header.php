@@ -31,7 +31,8 @@ function remedial_custom_header_setup() {
 		'width'                  => 1920,
 		'height'                 => 400,
 		'flex-height'            => true, 
-		'wp-head-callback'       => 'remedial_header_style'
+		'wp-head-callback'       => 'remedial_header_style',
+		'video'                  => true,
 	) ) );
 }
 

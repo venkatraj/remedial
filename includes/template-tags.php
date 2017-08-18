@@ -512,83 +512,83 @@ if( ! function_exists ( 'remedial_add_service_section' ) ) {
 		$service_section_icon_5 = esc_attr(get_theme_mod('service_section_icon_5')); 
 		$service_section_icon_6 = esc_attr(get_theme_mod('service_section_icon_6')); 
 
-		$service_section = get_theme_mod('service_section_status',true); ?> <?php if ($service_section) { ?>
+		$service_section = get_theme_mod('service_section_status',true); 
+		if ($service_section) { ?>
 			<div class="service-section-part">
-				<div class="container">
-					<main id="main" class="site-main" role="main">
-		<?php } 
-		
-	  if( $service_section && $service_section_title ) {
-			echo '<div class="section-head">';
-			echo '<h1 class="title-divider">' . get_the_title(absint($service_section_title)) . '</h1>';
-			$description = get_post_field('post_content',absint($service_section_title));
-			echo '<p class="sub-description">' . $description . '</p>';
-		    echo '</div>';
-		}
+			<div class="container">
+				<main id="main" class="site-main" role="main"><?php 
+				
+				    if( $service_section_title ) {
+						echo '<div class="section-head">';
+						echo '<h1 class="title-divider">' . get_the_title(absint($service_section_title)) . '</h1>';
+						$description = get_post_field('post_content',absint($service_section_title));
+						echo '<p class="sub-description">' . $description . '</p>';
+					    echo '</div>';
+					}
 
-		if( $service_section && ($service_page1 || $service_page2 || $service_page3 || $service_page4 || $service_page5 || $service_page6) ){
-			$service_pages = array($service_page1,$service_page2,$service_page3,$service_page4,$service_page5,$service_page6);
-			$args = array(
-				'post_type' => 'page',
-				'post__in' => $service_pages,
-				'posts_per_page' => -1,
-				'orderby' => 'post__in'
-			);
-			$query = new WP_Query($args); 
-			if( $query->have_posts()) : ?>
-				<div class="services-wrapper clearfix">
-					<?php $i = 1;
-					while($query->have_posts()) :
-							$query->the_post(); ?>  
-								<?php if ($i == 4) {?>
-							   		<span class="divider sixteen columns"></span>
-							   	<?php }?>
-							    <div class="one-third column service">
-							    	
-							    	    <?php if($i == 1):
-							    	      $icon_url =  $service_section_icon_1;
-							    	      elseif($i == 2):
-							    	       $icon_url =  $service_section_icon_2;
-							    	   	  elseif($i == 3):
-							    	       	$icon_url =  $service_section_icon_3;
-							    	      elseif($i == 4):
-							    	       	$icon_url =  $service_section_icon_4;
-							    	      elseif($i == 5):
-							    	       	$icon_url =  $service_section_icon_5;
-							    	      elseif($i == 6):
-							    	       	$icon_url =  $service_section_icon_6;
-							    	      
-							    	      endif;
+					if( $service_page1 || $service_page2 || $service_page3 || $service_page4 || $service_page5 || $service_page6) {
+						$service_pages = array($service_page1,$service_page2,$service_page3,$service_page4,$service_page5,$service_page6);
+						$args = array(
+							'post_type' => 'page',
+							'post__in' => $service_pages,
+							'posts_per_page' => -1,
+							'orderby' => 'post__in'
+						);
+						$query = new WP_Query($args); 
+						if( $query->have_posts()) : ?>
+							<div class="services-wrapper clearfix">
+								<?php $i = 1;
+								while($query->have_posts()) :
+										$query->the_post(); ?>  
+											<?php if ($i == 4) {?>
+										   		<span class="divider sixteen columns"></span>
+										   	<?php }?>
+										    <div class="one-third column service">
+										    	
+										    	    <?php if($i == 1):
+										    	      $icon_url =  $service_section_icon_1;
+										    	      elseif($i == 2):
+										    	       $icon_url =  $service_section_icon_2;
+										    	   	  elseif($i == 3):
+										    	       	$icon_url =  $service_section_icon_3;
+										    	      elseif($i == 4):
+										    	       	$icon_url =  $service_section_icon_4;
+										    	      elseif($i == 5):
+										    	       	$icon_url =  $service_section_icon_5;
+										    	      elseif($i == 6):
+										    	       	$icon_url =  $service_section_icon_6;
+										    	      
+										    	      endif;
 
-						    	        if($icon_url): ?>
-						    	        <div class="icon-wrapper">
-						    	          	<i class="fa <?php echo $icon_url; ?>" ></i>
-										</div>
-						    	        <?php
-						    	        elseif( has_post_thumbnail() ) : ?>
-	                                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail('remedial_recent_page_img'); ?></a><?php
-						    	        endif; ?>
-							    	
-							    	<div class="service-content">
-							    	    <?php the_title( sprintf( '<h4><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
-								    	<?php the_content( __( 'Read More', 'remedial' ) ); ?>
-							    	</div>
-							    </div>
-							   	
-							    <?php $i++;
-				    endwhile; ?>
-				</div>
+									    	        if($icon_url): ?>
+									    	        <div class="icon-wrapper">
+									    	          	<i class="fa <?php echo $icon_url; ?>" ></i>
+													</div>
+									    	        <?php
+									    	        elseif( has_post_thumbnail() ) : ?>
+				                                        <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail('remedial_recent_page_img'); ?></a><?php
+									    	        endif; ?>
+										    	
+										    	<div class="service-content">
+										    	    <?php the_title( sprintf( '<h4><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
+											    	<?php the_content( __( 'Read More', 'remedial' ) ); ?>
+										    	</div>
+										    </div>
+										   	
+										    <?php $i++;
+							    endwhile; ?>
+							</div>
 
-			<?php endif; ?>   
-			<?php  
-				$query = null;
-				$args = null;
-				wp_reset_postdata(); 
-		}?>
-		</main>
-		</div>
-	</div>
-	<?php }
+						<?php endif;   
+						$query = null;
+						$args = null;
+						wp_reset_postdata(); 
+					} ?>
+		        </main>
+		    </div>
+	        </div><?php 
+        }
+    }
 }
 
 
@@ -599,8 +599,8 @@ if( ! function_exists ( 'remedial_add_aboutus_section' ) ) {
 		$aboutus_section_title = intval(get_theme_mod('aboutus_section_title'));
 		$aboutus_section_status = get_theme_mod('aboutus_section_status',true);
 
-		if ($aboutus_section_status) { ?>
-			<div class="content-section-wrapper">
+		if ($aboutus_section_status && ( $aboutus_section_title || $aboutus_section_form  )) { ?>
+			<div class="content-section-wrapper"> 
 				<div class="container">
 					<main id="main" class="site-main clearfix" role="main">
 

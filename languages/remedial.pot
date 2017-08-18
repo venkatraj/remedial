@@ -196,11 +196,11 @@ msgstr ""
 msgid "Choose Post"
 msgstr ""
 
-#: includes/custom-header.php:97
+#: includes/custom-header.php:98
 msgid "Play background video"
 msgstr ""
 
-#: includes/custom-header.php:98
+#: includes/custom-header.php:99
 msgid "Pause background video"
 msgstr ""
 
