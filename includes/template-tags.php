@@ -126,7 +126,7 @@ if( ! function_exists('remedial_recent_posts') ) {
 				$output.= '<div class="section-head">';
 				$output.= '<h1 class="title-divider">' . get_the_title(absint($recent_post_section_title)) . '</h1>';
 				$description = get_post_field('post_content',absint($recent_post_section_title));
-				$output.= '<p class="sub-description">' . $description . '</p>';
+				$output.= '<p class="sub-description">' .  esc_html($description) . '</p>';
 			    $output.= '</div>';
 			}
 			$output .=  '<div class="container"><main id="main" class="site-main" role="main">'; 
@@ -262,16 +262,6 @@ if( ! function_exists('remedial_recent_posts') ) {
 			} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 				$post_type = get_post_type_object(get_post_type());
 				echo $before . $post_type->labels->singular_name . $after;
-
-			} elseif ( is_attachment() ) {
-				$parent = get_post($post->post_parent);
-				$cat = get_the_category($parent->ID); $cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, $delimiter);
-				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-				echo $cats;
-				printf($link, get_permalink($parent), $parent->post_title);
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 
 			} elseif ( is_page() && !$post->post_parent ) {
 				if ($showCurrent == 1) echo $before . get_the_title() . $after;
@@ -471,7 +461,7 @@ if( ! function_exists('remedial_top_meta') ) {
 		if ( 'post' == get_post_type() ) {  ?>
 			<div class="entry-meta">
 				<span class="date-structure">				
-					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><i class="fa fa-calendar"></i><?php the_time(get_option('date_format')); ?></a></span>			
+					<span class="dd"><a class="url fn n" href="<?php echo esc_url( get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d'))); ?>"><i class="fa fa-calendar"></i><?php the_time(get_option('date_format')); ?></a></span>			
 				</span>  
 				<?php remedial_comments_meta(); ?> 
 				<?php remedial_author(); ?>
@@ -522,7 +512,7 @@ if( ! function_exists ( 'remedial_add_service_section' ) ) {
 						echo '<div class="section-head">';
 						echo '<h1 class="title-divider">' . get_the_title(absint($service_section_title)) . '</h1>';
 						$description = get_post_field('post_content',absint($service_section_title));
-						echo '<p class="sub-description">' . $description . '</p>';
+						echo '<p class="sub-description">' .  esc_html($description) . '</p>';
 					    echo '</div>';
 					}
 
@@ -608,7 +598,7 @@ if( ! function_exists ( 'remedial_add_aboutus_section' ) ) {
 						echo '<div class="section-head clr-white">';
 						echo '<h1 class="title-divider">' . get_the_title(absint($aboutus_section_title)) . '</h1>';
 						$description = get_post_field('post_content',absint($aboutus_section_title));
-						echo '<p class="sub-description">' . $description . '</p>';
+						echo '<p class="sub-description">' . esc_html($description) . '</p>';
 					    echo '</div>';
 					}
 

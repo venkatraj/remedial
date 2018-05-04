@@ -223,7 +223,7 @@ if( ! class_exists('Remedial_Customizer_API_Wrapper') ) {
 					break;
 				case 'icons-picker':
 					$wp_customize->add_control( 
-						new Icon_Customizer_Icon_Picker_Control(
+						new Remedial_Icon_Customizer_Icon_Picker_Control(
 							$wp_customize, 
 							$field_id,
 							array(

@@ -5,15 +5,14 @@
  * @package Remedial
  */
 
-get_header(); 
-get_template_part( 'template-parts/breadcrumb' ); ?>
+get_header(); ?>
 			
 <div id="content" class="site-content">
 		<div class="container">
 
         <?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
 		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
+			<?php get_sidebar(); ?>
 		<?php endif; ?>  
 		
 	<section id="primary" class="content-area <?php remedial_layout_class(); ?>  columns">
@@ -22,7 +21,7 @@ get_template_part( 'template-parts/breadcrumb' ); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'remedial' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'remedial' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

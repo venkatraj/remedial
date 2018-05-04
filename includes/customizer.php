@@ -48,17 +48,15 @@ function remedial_customizer_service_color() {
 			<style type="text/css">
 				.services-wrapper .service:nth-of-type(<?php echo $i; ?>) .service-content:hover h4 a	
 			    {
-					color: <?php echo $service_color; ?>;
+					color: <?php echo esc_html($service_color); ?>;
 				}
 				.services-wrapper .service:nth-of-type(<?php echo $i; ?>) .service-content:hover p a	
 			    {
-					background-color: <?php echo $service_color; ?>;
+					background-color: <?php echo esc_html($service_color); ?>;
 				}
-
-
 				.services-wrapper .service:nth-of-type(<?php echo $i; ?>) .icon-wrapper .fa
 				{
-					color: <?php echo $service_color; ?>;
+					color: <?php echo esc_html($service_color); ?>;
 				}
 
 			</style><?php

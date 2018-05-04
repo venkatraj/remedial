@@ -1,9 +1,9 @@
 === Remedial ===
 Contributors: Webulous
-Tags: blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, translation-ready, theme-options, rtl-language-support
+Tags: blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, theme-options, rtl-language-support
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 1.0.0
+Tested up to: 4.9.5
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,7 +33,7 @@ Remedial is responsive health theme for doctors, hospitals, medical clinics and 
 6. Select a category for 'Slider Posts Category'.
 7. Enter no. of slides to show from above selected category.
 8. Select Service section #1,#2,#3,#4,#5,#6 and icons.
-9. Select the image content section.
+9. Select the About Us section.
 10.Enable the Recent Post section and save it.
 11.Enable home page content if you want
 
@@ -46,12 +46,12 @@ Enable/Disable featured images visibility.
 
 == Changelog ==
 
-= 1.0.0=
+= 1.0.3 =
 * Initial Release
 
 == Upgrade Notice ==
 
-= 1.0.0=
+= 1.0.3 =
 * Initial Release
 
 Remedial WordPress Theme bundles the following third-party resources:
@@ -61,7 +61,8 @@ Remedial WordPress Theme bundles the following third-party resources:
 * {Flexslider} © 2015 Woo Themes, GPLv2 ,https://github.com/woothemes/FlexSlider
 * {FontAwesome Icon Picker} © Licensed under the MIT License, https://github.com/mjolnic/fontawesome-iconpicker/blob/master/LICENSE
 * {FontAwesome} © Dave Gandy, SIL OFL 1.1 and MIT ,https://fortawesome.github.io/Font-Awesome
+* {TGM Plugin Activation} library is licensed under the GPL-2.0, https://github.com/TGMPA/TGM-Plugin-Activation/
+
 * Screenshot Images is licensed under CC0 Public Domain License.(http://pixabay.com/en/service/terms/)
 	https://pixabay.com/en/nurse-stethoscope-medicine-2141808/
-	https://pixabay.com/en/treatment-room-office-doctor-548143/
-* Except above All Images inside the images folder are created by own. Those Image are licensed under CC0 Public Domain License GPLv3.
+* Except above All Images inside the images folder are created by own. Those Image are licensed under CC0 Public Domain.

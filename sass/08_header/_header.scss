@@ -33,6 +33,31 @@
 	}
 }
 
+.has-header-video {
+  padding:0px;
+  .branding {
+    bottom: -50px;
+    display: block;
+    left: 0;
+    height: auto;
+    padding-top: 0;
+    position: absolute;
+    width: 100%;
+    .site-title a {
+      color:white;
+    }
+    .top-right,.top-left {
+      .right, .left {
+        color:white;
+        span {
+          color:white;
+        }
+      }
+    }
+  }
+}
+
+
 .sticky-nav {
  	position: fixed;
 	top: -2px;

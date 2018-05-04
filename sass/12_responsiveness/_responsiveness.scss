@@ -257,3 +257,15 @@
   } 
   
 }
+
+@media only screen and (max-width:550px) {
+  .content-section-wrapper #aboutus-form .text-area.field, .content-section-wrapper #aboutus-form p  
+  {
+    float:none;
+    width:100%;
+  }
+  .content-section-wrapper #aboutus-form {
+    margin-right:0px;
+  }
+  
+}

@@ -1,14 +1,14 @@
 /*
 Theme Name: Remedial
-Theme URI: http://www.webulousthemes.com/remedial/
+Theme URI: https://www.webulousthemes.com/remedial/
 Author: N. Venkat Raj  
-Author URI: http://www.webulousthemes.com/
+Author URI: https://www.webulousthemes.com/
 Description: Remedial is responsive health theme for doctors, hospitals, medical clinics and all medical websites.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Making your website your own is easier than ever before with Medical Way.
-Version: 1.0.0
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: remedial
-Tags: blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, translation-ready, theme-options, rtl-language-support
+Tags: blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, theme-options, rtl-language-support
 
 Remedial WordPress Theme, Copyright (C) 2017, N. Venkat Raj
 Remedial is distributed under the terms of the GNU GPL
@@ -1300,6 +1300,23 @@ object {
     .branding .site-branding .site-title a:hover {
       color: #2591fd; }
 
+.has-header-video {
+  padding: 0px; }
+  .has-header-video .branding {
+    bottom: -50px;
+    display: block;
+    left: 0;
+    height: auto;
+    padding-top: 0;
+    position: absolute;
+    width: 100%; }
+    .has-header-video .branding .site-title a {
+      color: white; }
+    .has-header-video .branding .top-right .right, .has-header-video .branding .top-right .left, .has-header-video .branding .top-left .right, .has-header-video .branding .top-left .left {
+      color: white; }
+      .has-header-video .branding .top-right .right span, .has-header-video .branding .top-right .left span, .has-header-video .branding .top-left .right span, .has-header-video .branding .top-left .left span {
+        color: white; }
+
 .sticky-nav {
   position: fixed;
   top: -2px;
@@ -1455,8 +1472,7 @@ ol.comment-list {
   margin: 0;
   list-style-type: none;
   margin-bottom: 30px;
-  border: 1px solid #999999;
-  background: #222222; }
+  border: 1px solid #999999; }
 
 ol.comment-list ol.children {
   list-style-type: none;
@@ -1491,7 +1507,7 @@ ol.comment-list .reply {
 .comment-author {
   display: inline;
   text-transform: uppercase;
-  color: #fff; }
+  color: #222222; }
   .comment-author img {
     position: absolute;
     left: 0; }
@@ -1515,7 +1531,7 @@ ol.comment-list article {
     font-family: "Bitter", serif;
     cursor: pointer; }
   ol.comment-list article p {
-    color: #fff; }
+    color: #222222; }
 
 ol.comment-list article .comment-author img {
   top: -5px;
@@ -1524,7 +1540,7 @@ ol.comment-list article .comment-author img {
   height: 100px; }
 
 ol.comment-list li.byuser .comment-metadata a:hover {
-  color: #fff; }
+  color: #222222; }
 
 .comment-meta .edit-link {
   position: absolute;
@@ -1532,9 +1548,10 @@ ol.comment-list li.byuser .comment-metadata a:hover {
   top: -4px; }
   .comment-meta .edit-link a {
     color: #fff;
+    background-color: #2591fd;
     padding: 5px 12px; }
     .comment-meta .edit-link a:hover {
-      background-color: #2591fd;
+      background-color: #222222;
       color: #fff !important; }
 
 .comment-metadata {
@@ -1795,45 +1812,22 @@ blockquote, q {
     color: #2591fd; }
 
 /* Search Page */
-.search article .entry-meta {
-  text-transform: uppercase; }
-  .search article .entry-meta span {
-    position: relative; }
-    .search article .entry-meta span:after {
-      position: absolute;
-      content: "-";
-      font-size: 17px;
-      top: auto;
-      left: auto; }
-    .search article .entry-meta span a {
-      color: #222222;
-      font-size: 14px;
-      padding: 0px 10px 0px 20px; }
-      .search article .entry-meta span a:hover {
-        color: #2591fd; }
-    .search article .entry-meta span:last-child:after {
-      display: none; }
-  .search article .entry-meta .author a {
-    padding-left: 0px; }
+.search article .entry-meta span a {
+  color: #999999;
+  font-size: 14px;
+  padding-right: 30px; }
+  .search article .entry-meta span a:hover {
+    color: #2591fd; }
 
-.search article .entry-date {
-  border: 2px solid #2591fd;
-  float: left;
-  text-align: center;
-  width: 15%; }
-  .search article .entry-date .date-structure {
-    display: inline-block;
-    padding: 5px 0px;
-    color: #2591fd;
-    line-height: 1; }
-    .search article .entry-date .date-structure h2 {
-      font-size: 54px;
-      color: #2591fd;
-      margin-bottom: 0px; }
-    .search article .entry-date .date-structure span {
-      display: block;
-      font-size: 16px;
-      font-weight: bold; }
+.search article .entry-meta span i {
+  font-size: 14px;
+  margin-right: 8px; }
+
+.search article .entry-meta span:last-child:after {
+  display: none; }
+
+.search article .entry-meta .author a {
+  padding-left: 0px; }
 
 .home .site-header {
   border-bottom: none; }
@@ -3248,3 +3242,10 @@ blockquote, q {
     width: 100%; }
   ol.comment-list ol.children {
     margin-left: 1em; } }
+
+@media only screen and (max-width: 550px) {
+  .content-section-wrapper #aboutus-form .text-area.field, .content-section-wrapper #aboutus-form p {
+    float: none;
+    width: 100%; }
+  .content-section-wrapper #aboutus-form {
+    margin-right: 0px; } }

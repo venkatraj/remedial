@@ -23,9 +23,9 @@
  * @subpackage Icon Picker
  * @since 0.1
  */
-if( !function_exists('icon_add_icon_picker_control') ) :
-	function icon_add_icon_picker_control( $wp_customize ) {
-		class Icon_Customizer_Icon_Picker_Control extends WP_Customize_Control {
+if( !function_exists('remedial_icon_add_icon_picker_control') ) :
+	function remedial_icon_add_icon_picker_control( $wp_customize ) {
+		class Remedial_Icon_Customizer_Icon_Picker_Control extends WP_Customize_Control {
 
 			public $type = 'icon-picker'; 
 	 
@@ -57,4 +57,4 @@ if( !function_exists('icon_add_icon_picker_control') ) :
 		}
 	}
 endif;
-add_action( 'customize_register', 'icon_add_icon_picker_control' );
+add_action( 'customize_register', 'remedial_icon_add_icon_picker_control' );

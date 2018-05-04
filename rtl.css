@@ -1226,6 +1226,23 @@ object {
     .branding .site-branding .site-title a:hover {
       color: #2591fd; }
 
+.has-header-video {
+  padding: 0px; }
+  .has-header-video .branding {
+    bottom: -50px;
+    display: block;
+    right: 0;
+    height: auto;
+    padding-top: 0;
+    position: absolute;
+    width: 100%; }
+    .has-header-video .branding .site-title a {
+      color: white; }
+    .has-header-video .branding .top-right .right, .has-header-video .branding .top-right .left, .has-header-video .branding .top-left .right, .has-header-video .branding .top-left .left {
+      color: white; }
+      .has-header-video .branding .top-right .right span, .has-header-video .branding .top-right .left span, .has-header-video .branding .top-left .right span, .has-header-video .branding .top-left .left span {
+        color: white; }
+
 .sticky-nav {
   position: fixed;
   top: -2px;
@@ -1379,8 +1396,7 @@ ol.comment-list {
   margin: 0;
   list-style-type: none;
   margin-bottom: 30px;
-  border: 1px solid #999999;
-  background: #222222; }
+  border: 1px solid #999999; }
 
 ol.comment-list ol.children {
   list-style-type: none;
@@ -1415,7 +1431,7 @@ ol.comment-list .reply {
 .comment-author {
   display: inline;
   text-transform: uppercase;
-  color: #fff; }
+  color: #222222; }
   .comment-author img {
     position: absolute;
     right: 0; }
@@ -1439,7 +1455,7 @@ ol.comment-list article {
     font-family: "Bitter", serif;
     cursor: pointer; }
   ol.comment-list article p {
-    color: #fff; }
+    color: #222222; }
 
 ol.comment-list article .comment-author img {
   top: -5px;
@@ -1448,7 +1464,7 @@ ol.comment-list article .comment-author img {
   height: 100px; }
 
 ol.comment-list li.byuser .comment-metadata a:hover {
-  color: #fff; }
+  color: #222222; }
 
 .comment-meta .edit-link {
   position: absolute;
@@ -1456,9 +1472,10 @@ ol.comment-list li.byuser .comment-metadata a:hover {
   top: -4px; }
   .comment-meta .edit-link a {
     color: #fff;
+    background-color: #2591fd;
     padding: 5px 12px; }
     .comment-meta .edit-link a:hover {
-      background-color: #2591fd;
+      background-color: #222222;
       color: #fff !important; }
 
 .comment-metadata {
@@ -1719,45 +1736,22 @@ blockquote, q {
     color: #2591fd; }
 
 
-.search article .entry-meta {
-  text-transform: uppercase; }
-  .search article .entry-meta span {
-    position: relative; }
-    .search article .entry-meta span:after {
-      position: absolute;
-      content: "-";
-      font-size: 17px;
-      top: auto;
-      right: auto; }
-    .search article .entry-meta span a {
-      color: #222222;
-      font-size: 14px;
-      padding: 0px 20px 0px 10px; }
-      .search article .entry-meta span a:hover {
-        color: #2591fd; }
-    .search article .entry-meta span:last-child:after {
-      display: none; }
-  .search article .entry-meta .author a {
-    padding-right: 0px; }
+.search article .entry-meta span a {
+  color: #999999;
+  font-size: 14px;
+  padding-left: 30px; }
+  .search article .entry-meta span a:hover {
+    color: #2591fd; }
 
-.search article .entry-date {
-  border: 2px solid #2591fd;
-  float: right;
-  text-align: center;
-  width: 15%; }
-  .search article .entry-date .date-structure {
-    display: inline-block;
-    padding: 5px 0px;
-    color: #2591fd;
-    line-height: 1; }
-    .search article .entry-date .date-structure h2 {
-      font-size: 54px;
-      color: #2591fd;
-      margin-bottom: 0px; }
-    .search article .entry-date .date-structure span {
-      display: block;
-      font-size: 16px;
-      font-weight: bold; }
+.search article .entry-meta span i {
+  font-size: 14px;
+  margin-left: 8px; }
+
+.search article .entry-meta span:last-child:after {
+  display: none; }
+
+.search article .entry-meta .author a {
+  padding-right: 0px; }
 
 .home .site-header {
   border-bottom: none; }
@@ -3166,3 +3160,10 @@ blockquote, q {
     width: 100%; }
   ol.comment-list ol.children {
     margin-right: 1em; } }
+
+@media only screen and (max-width: 550px) {
+  .content-section-wrapper #aboutus-form .text-area.field, .content-section-wrapper #aboutus-form p {
+    float: none;
+    width: 100%; }
+  .content-section-wrapper #aboutus-form {
+    margin-left: 0px; } }

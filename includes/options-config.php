@@ -159,19 +159,20 @@ function remedial_display_upgrade() {
         $tab = null;
     } 
      
-    $pro_theme_url = 'https://webulousthemes.com/theme/remedial-pro/';
+    $pro_theme_url = 'https://www.webulousthemes.com/theme/remedial-pro/';
     $doc_url  = 'https://www.webulousthemes.com/remedial-free';
-    $support_url = 'https://webulousthemes.com/free-support-request/';   
+    $support_url = 'https://www.webulousthemes.com/free-support-request/';   
     
     $current_action_link =  admin_url( 'themes.php?page=remedial_upgrade&tab=pro_features' ); ?>
     <div class="remedial-wrapper about-wrap">
         <h1><?php printf(esc_html__('Welcome to %1$s - Version %2$s', 'remedial'), $theme_data->Name ,$theme_data->Version ); ?></h1><?php
-       	printf( __('<div class="about-text"> Remedial is responsive health theme for doctors, hospitals, medical clinics and all medical websites.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Making your website your own is easier than ever before with Medical Way.</div>', 'remedial') ); ?>
-        <a href="https://webulousthemes.com/" target="_blank" class="wp-badge welcome-logo"></a>   
+       	echo sprintf( '<div class="about-text">%1$s</div>',__(' Remedial is responsive health theme for doctors, hospitals, medical clinics and all medical websites.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Making your website your own is easier than ever before with Medical Way.','remedial') ); ?>
+        <a href="https://www.webulousthemes.com/" target="_blank" class="wp-badge welcome-logo"></a>   
         <p class="upgrade-btn"><a class="upgrade" href="<?php echo esc_url($pro_theme_url); ?>" target="_blank"><?php printf( __( 'Buy %1s Pro - $39', 'remedial'), $theme_data->Name ); ?></a></p>
 
 	    <h2 class="nav-tab-wrapper">
 	        <a href="?page=remedial_upgrade" class="nav-tab<?php echo is_null($tab) ? ' nav-tab-active' : null; ?>"><?php echo $theme_data->Name; ?></a>
+	        <a href="?page=remedial_upgrade&tab=one_click_demo" class="nav-tab<?php echo $tab == 'one_click_demo' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Import Demo Data', 'remedial' );  ?></a> 
 	        <a href="?page=remedial_upgrade&tab=pro_features" class="nav-tab<?php echo $tab == 'pro_features' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'PRO Features', 'remedial' );  ?></a>
             <a href="?page=remedial_upgrade&tab=free_vs_pro" class="nav-tab<?php echo $tab == 'free_vs_pro' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Free VS PRO', 'remedial' ); ?></a>
 	        <?php do_action( 'remedial_admin_more_tabs' ); ?>
@@ -207,12 +208,28 @@ function remedial_display_upgrade() {
                     </div>  
 
                     <div class="theme_info_right">
-                        <img src="<?php echo get_template_directory_uri(); ?>/screenshot.png" alt="Theme Screenshot" />
+						<?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/screenshot.png" alt="%1$s" />',__('Theme screenshot','remedial') ); ?>
                     </div>
                 </div>
             </div>
         <?php } ?>
-
+		<?php if ( $tab == 'one_click_demo' ) { ?>
+            <div class="one-click-demo-tab info-tab-content">
+				<div class="wrap clearfix">
+					<?php
+					if( ! function_exists('is_plugin_activate') ) {
+						include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					}
+					if ( remedial_is_plugin_installed('One Click Demo Import') != 1 ) {
+						echo sprintf('%1$s <a href="%2$s"> %3$s</a>', __('Install required plugin to import the demo content.','remedial'), admin_url('themes.php?page=tgmpa-install-plugins&plugin_status=install'), __('Begin Installing Plugin','remedial') );
+					} elseif ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ) {	
+						echo sprintf('<a href="%1$s"> %2$s</a>',  admin_url('themes.php?page=pt-one-click-demo-import'), __('Click here to install the demo','remedial') );
+				    } else {
+				    	echo sprintf('%1$s <a href="%2$s"> %3$s</a>', __('Kindly activate the Required plugin to Import the demo content.','remedial'), admin_url('themes.php?page=tgmpa-install-plugins&plugin_status=activate'), __('Begin Activating Plugin','remedial') );
+				    } ?>
+				</div>
+			</div><?php   
+		} ?> 
         <?php if ( $tab == 'pro_features' ) { ?>
             <div class="pro-features-tab info-tab-content"><?php
 			    global $remedial_why_upgrade; ?>
@@ -230,8 +247,8 @@ function remedial_display_upgrade() {
 		                <thead>
 			                <tr>
 			                    <th></th>
-			                    <th><?php echo $theme_data->Name; ?> Lite</th>
-			                    <th><?php echo $theme_data->Name; ?> PRO</th>
+			                    <th><?php echo esc_html($theme_data->Name); ?> Lite</th>
+			                    <th><?php echo esc_html($theme_data->Name); ?> PRO</th>
 			                </tr>
 		                </thead>
 		                <tbody>
@@ -257,7 +274,7 @@ function remedial_display_upgrade() {
 		                    </tr>
 		                    <tr>
 		                         <td><h3><?php _e('Social Links', 'remedial'); ?></h3></td>
-		                         <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+		                         <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
 		                         <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 		                    </tr>
 		                    <tr>
@@ -382,24 +399,6 @@ function remedial_display_upgrade() {
                             ),
 						),
 					),
-					'header' => array(
-						'title' => __('Header', 'remedial'),
-						'description' => __('Header options', 'remedial'),
-						'fields' => array(
-							'logo_title' => array(
-								'type' => 'checkbox',
-								'label' => __('Logo as Title', 'remedial'),
-								'default' => 0,
-								'sanitize_callback' => 'remedial_boolean',
-							),
-							'tagline' => array(
-								'type' => 'checkbox',
-								'label' => __('Show site Tagline', 'remedial'),
-								'default' => 1,
-								'sanitize_callback' => 'remedial_boolean',
-							),
-						),
-					),
 					'footer' => array(
 						'title' => __('Footer', 'remedial'),
 						'description' => __('Footer related options', 'remedial'),
@@ -477,13 +476,6 @@ function remedial_display_upgrade() {
                                 ),
                                'default' => '1', 
                                'sanitize_callback' => 'absint',    
-                            ),
-                            'comments' => array(
-                                'type' => 'checkbox',
-                                'label' => __(' Show Comments', 'remedial'),
-                                'description' => __('Show Comments', 'remedial'),
-                                'default' => 1,  
-                                'sanitize_callback' => 'remedial_boolean',
                             ),
 						),
 					),
