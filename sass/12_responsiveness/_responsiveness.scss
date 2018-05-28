@@ -70,7 +70,31 @@
     padding:7px 2px;
   }
 
-
+  .branding {
+    .five.columns {
+      .top-left,.top-right {
+        margin-top:10px;
+        .thirteen.columns {
+          text-align:center;
+        }
+        .three.columns {
+          text-align:center;
+          i {
+            float:none;
+            margin-top:10px;
+          }
+        }
+      }
+    }
+    .top-right {
+      margin-top:0px;
+      margin-bottom:10px;
+      i {
+        margin-top:0px;
+        margin-bottom:10px;
+      }
+    }
+  }
   .site-branding {
     text-align: center;
     img {
@@ -124,23 +148,7 @@
     float: none;
     margin-right: 0;
   }
-  .top-nav  {
-    padding: 10px 0px;
-    text-align:center;
-    .seven.columns,.eight.columns {
-      .cart-right{
-        text-align:center;
-        ul {
-          li {
-            margin-right:0px;
-          }
-        }
-      }
-    }
-    .one.columns {
-      display:none;
-    }
-  }
+  
  .comment-form input[type=text],
   .comment-form input[type=email],
   .comment-form input[type=text] {
@@ -176,31 +184,7 @@
      
     }
   }
-  .branding {
-    .five.columns {
-      .top-left,.top-right {
-        margin-top:10px;
-        .thirteen.columns {
-          text-align:center;
-        }
-        .three.columns {
-          text-align:center;
-          i {
-            float:none;
-            margin-top:10px;
-          }
-        }
-      }
-    }
-    .top-right {
-      margin-top:0px;
-      margin-bottom:10px;
-      i {
-        margin-top:0px;
-        margin-bottom:10px;
-      }
-    }
-  }
+  
   .services-wrapper .one-third.service:nth-of-type(1), .services-wrapper .one-third.service:nth-of-type(4) {
       border-right:0;
   }
@@ -212,7 +196,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   .main-navigation {
     padding: 10px 0;
     li {
@@ -238,18 +222,7 @@
       padding-top:0;
     }   
   }
-  .blog {
-    article {
-      .latest-content {
-        .entry-date {
-          width:25%;
-        }
-        .header-content {
-          width:100%;
-        }
-      }
-    }
-  }
+
 
 
   ol.comment-list ol.children {

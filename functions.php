@@ -47,6 +47,9 @@ function remedial_setup() {
 		'primary' => __( 'Primary Menu', 'remedial' ),
 	) );
 
+	add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link',
+	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -510,6 +513,7 @@ if( !function_exists('remedial_register_plugins') ) {
 			// Automatically activate plugins after installation or not.
 			'message'      => '',
 			// Message to output right before the plugins table.
+			
 		);
 
 		tgmpa( $plugins, $config );

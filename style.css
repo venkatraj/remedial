@@ -4,7 +4,7 @@ Theme URI: https://www.webulousthemes.com/remedial/
 Author: N. Venkat Raj  
 Author URI: https://www.webulousthemes.com/
 Description: Remedial is responsive health theme for doctors, hospitals, medical clinics and all medical websites.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Making your website your own is easier than ever before with Medical Way.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: remedial
@@ -1423,16 +1423,16 @@ object {
   .share-box ul li {
     border: 0;
     padding: 0;
-    margin: 0 8px 0px 0px;
+    margin: 0 10px 0px 0px;
     display: inline-block; }
     .share-box ul li a {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       color: #222222;
       display: inline-block;
       background-color: #222222;
       text-align: center;
-      line-height: 30px;
+      line-height: 35px;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       color: #fff; }
@@ -1443,8 +1443,7 @@ object {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 2; }
+        font-size: 1.4rem; }
 
 .share-box {
   margin-bottom: 50px; }
@@ -3130,6 +3129,21 @@ blockquote, q {
     padding: 7px 2px; }
   table td {
     padding: 7px 2px; }
+  .branding .five.columns .top-left, .branding .five.columns .top-right {
+    margin-top: 10px; }
+    .branding .five.columns .top-left .thirteen.columns, .branding .five.columns .top-right .thirteen.columns {
+      text-align: center; }
+    .branding .five.columns .top-left .three.columns, .branding .five.columns .top-right .three.columns {
+      text-align: center; }
+      .branding .five.columns .top-left .three.columns i, .branding .five.columns .top-right .three.columns i {
+        float: none;
+        margin-top: 10px; }
+  .branding .top-right {
+    margin-top: 0px;
+    margin-bottom: 10px; }
+    .branding .top-right i {
+      margin-top: 0px;
+      margin-bottom: 10px; }
   .site-branding {
     text-align: center; }
     .site-branding img {
@@ -3162,15 +3176,6 @@ blockquote, q {
     width: 100%;
     float: none;
     margin-right: 0; }
-  .top-nav {
-    padding: 10px 0px;
-    text-align: center; }
-    .top-nav .seven.columns .cart-right, .top-nav .eight.columns .cart-right {
-      text-align: center; }
-      .top-nav .seven.columns .cart-right ul li, .top-nav .eight.columns .cart-right ul li {
-        margin-right: 0px; }
-    .top-nav .one.columns {
-      display: none; }
   .comment-form input[type=text],
   .comment-form input[type=email],
   .comment-form input[type=text] {
@@ -3194,21 +3199,6 @@ blockquote, q {
   .service-wrapper .six.columns .service-image-section {
     position: static;
     margin-bottom: 70px; }
-  .branding .five.columns .top-left, .branding .five.columns .top-right {
-    margin-top: 10px; }
-    .branding .five.columns .top-left .thirteen.columns, .branding .five.columns .top-right .thirteen.columns {
-      text-align: center; }
-    .branding .five.columns .top-left .three.columns, .branding .five.columns .top-right .three.columns {
-      text-align: center; }
-      .branding .five.columns .top-left .three.columns i, .branding .five.columns .top-right .three.columns i {
-        float: none;
-        margin-top: 10px; }
-  .branding .top-right {
-    margin-top: 0px;
-    margin-bottom: 10px; }
-    .branding .top-right i {
-      margin-top: 0px;
-      margin-bottom: 10px; }
   .services-wrapper .one-third.service:nth-of-type(1), .services-wrapper .one-third.service:nth-of-type(4) {
     border-right: 0; }
   .services-wrapper .divider {
@@ -3216,7 +3206,7 @@ blockquote, q {
   .services-wrapper .one-third.service:nth-of-type(3), .services-wrapper .one-third.service:nth-of-type(6) {
     border-left: 0px; } }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   .main-navigation {
     padding: 10px 0; }
     .main-navigation li {
@@ -3236,10 +3226,6 @@ blockquote, q {
         background: #2591fd; }
     .main-navigation .menu-all-pages-container {
       padding-top: 0; }
-  .blog article .latest-content .entry-date {
-    width: 25%; }
-  .blog article .latest-content .header-content {
-    width: 100%; }
   ol.comment-list ol.children {
     margin-left: 1em; } }
 

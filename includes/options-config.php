@@ -181,6 +181,16 @@ function remedial_display_upgrade() {
         <?php if ( is_null( $tab ) ) { ?>
             <div class="theme_info info-tab-content">
                 <div class="theme_info_column clearfix">
+                	<div id="webulous-create-web">
+	                	<a href="https://www.webulousthemes.com/checkout?edd_action=add_to_cart&download_id=23052" target="_blank">
+							<div id="webulous-mode-wrap">
+								<?php echo sprintf ('<h3>%1$s</h3><p>%2$s</p>',__('New to Creating a Website?','remedial'),__('We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.','remedial') ); ?>
+							</div>
+							<div class="image-wrap">
+								<?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','remedial') ); ?>
+							</div>
+						</a>
+					</div>
                     <div class="theme_info_left">
                         <div class="theme_link">
                             <h3><?php esc_html_e( 'Theme Customizer', 'remedial' ); ?></h3>
@@ -274,7 +284,7 @@ function remedial_display_upgrade() {
 		                    </tr>
 		                    <tr>
 		                         <td><h3><?php _e('Social Links', 'remedial'); ?></h3></td>
-		                         <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
+		                         <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 		                         <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 		                    </tr>
 		                    <tr>
@@ -437,49 +447,88 @@ function remedial_display_upgrade() {
                                 'default' => '1', 
                                 'sanitize_callback' => 'absint',
                             ),
+						),
+					), 
+					'single_blog' => array(
+						'title' => __('Single Blog', 'remedial'),
+						'description' => __('Single Blog page Related Posts options', 'remedial'),
+						'fields' => array(
 							'single_featured_image' => array(
 								'type' => 'checkbox',
 								'label' => __('Enable Single Post Featured Image', 'remedial'),
 								'default' => 1,
 								'sanitize_callback' => 'remedial_boolean',
 							),
-                            'single_featured_image_size' => array(
-                                'type' => 'radio',
-                                'label' => __('Choose the featured image display type for Single Page ', 'remedial'),
-                                'choices' => array(
-                                    '1' => __('Large Featured Image', 'remedial'),
-                                    '2' => __('Small Featured Image', 'remedial'),       
-                                ),
-                                'default' => '1', 
-                                'sanitize_callback' => 'absint',  
-                            ),
-                             'author_bio_box' => array(
-                                'type' => 'checkbox',
-                                'label' => __(' Enable Author Bio Box below single post', 'remedial'),
-                                'description' => __('Show Author information box below single post.', 'remedial'),
-                                'default' => 0,
-                                'sanitize_callback' => 'remedial_boolean',    
-                            ),
-                            'related_posts' => array(
-                                'type' => 'checkbox',
-                                'label' => __('Show Related posts', 'remedial'),
-                                'description' => __('Show related posts.', 'remedial'),
-                                'default' => 0, 
-                                'sanitize_callback' => 'remedial_boolean', 
-                            ),
-                            'related_posts_hierarchy' => array(
-                                'type' => 'radio',
-                                'label' => __('Related Posts Must Be Shown As:', 'remedial'),
-                                'choices' => array(
-                                    '1' => __('Related Posts By Tags', 'remedial'),
-                                    '2' => __('Related Posts By Categories', 'remedial'),      
-                                ),
-                               'default' => '1', 
-                               'sanitize_callback' => 'absint',    
-                            ),
+							'single_featured_image_size' => array(
+								'type' => 'radio',
+								'label' => __('Choose the featured image display type for Single Page ', 'remedial'),
+								'choices' => array(
+									'1' => __('Large Featured Image', 'remedial'),
+									'2' => __('Small Featured Image', 'remedial'),       
+								),
+								'default' => '1', 
+								'sanitize_callback' => 'absint',  
+							),
+							'social_sharing_box' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Social Sharing Box below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'facebook_sb' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Facebook Sharing option below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'twitter_sb' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Twitter Sharing option below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'linkedin_sb' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Linkedin Sharing option below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'google-plus_sb' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Google Plus Sharing option below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'email_sb' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Email Sharing option below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'author_bio_box' => array(
+								'type' => 'checkbox',
+								'label' => __(' Enable Author Bio Box below single post', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',    
+							),
+							'related_posts' => array(
+								'type' => 'checkbox',
+								'label' => __('Show Related posts', 'remedial'),
+								'default' => 0, 
+								'sanitize_callback' => 'remedial_boolean', 
+							),
+							'related_posts_hierarchy' => array(
+								'type' => 'radio',
+								'label' => __('Related Posts Must Be Shown As:', 'remedial'),
+								'choices' => array(
+									'1' => __('Related Posts By Tags', 'remedial'),
+									'2' => __('Related Posts By Categories', 'remedial'),      
+								),
+								'default' => '1', 
+								'sanitize_callback' => 'absint',    
+							),
 						),
 					),
-
 				)
 			),
 			'home-remedial' => array(
@@ -664,6 +713,11 @@ function remedial_display_upgrade() {
 								'label' => __('No. of Recent Posts', 'remedial'),
 								'sanitize_callback' => 'absint',
 								'default' => 3,  
+							),
+							'recent_posts_exclude' => array(
+								'type' => 'text',
+								'label' => __('Exclude the Posts from Home Page. Post IDs, separated by commas.', 'remedial'),
+								'sanitize_callback' => 'sanitize_text_field', 
 							),
 						),
 				    ),
