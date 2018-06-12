@@ -3,7 +3,7 @@ Contributors: Webulous
 Tags: blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, theme-options, rtl-language-support
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,6 +46,9 @@ Enable/Disable featured images visibility.
 
 == Changelog ==
 
+= 1.0.5 =
+* Scroll to Top option added.
+
 = 1.0.4 =
 * Social Sharing Box option added in Single post.
 * Post Exclude Option added.
@@ -56,10 +59,8 @@ Enable/Disable featured images visibility.
 
 == Upgrade Notice ==
 
-= 1.0.4 =
-* Social Sharing Box option added in Single post.
-* Post Exclude Option added.
-* Added site Creation Ads in Theme Upgrade Page.
+= 1.0.5 =
+* Scroll to Top option added.
 
 Remedial WordPress Theme bundles the following third-party resources:
 == Resources ==

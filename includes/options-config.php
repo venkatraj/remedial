@@ -419,6 +419,12 @@ function remedial_display_upgrade() {
 								'default' => 1,
 								'sanitize_callback' => 'remedial_boolean',
 							),
+							'scroll_to_top' => array(
+								'type' => 'checkbox',
+								'label' => __('Enable Scroll To Top', 'remedial'),
+								'default' => 0,
+								'sanitize_callback' => 'remedial_boolean',
+							),
 							'copyright' => array(
                                 'type' => 'textarea',
                                 'label' => __('Footer Copyright Text (Validated that it\'s HTML Allowed)', 'remedial'),
@@ -761,19 +767,19 @@ if ( ! function_exists( 'remedial_footer_copyright' ) ) {
 
     function remedial_footer_copyright($string) {
         $allowed_tags = array(    
-                            'a' => array(
-                            	'href' => array(),
-								'title' => array(),
-								'target' => array(),
-                            ),
-							'img' => array(
-								'src' => array(),  
-								'alt' => array(),
-							),
-							'p' => array(),
-							'br' => array(),
-							'em' => array(),
-                            'strong' => array(),
+			'a' => array(
+				'href' => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'img' => array(
+				'src' => array(),  
+				'alt' => array(),
+			),
+			'p' => array(),
+			'br' => array(),
+			'em' => array(),
+			'strong' => array(),
         );
         return wp_kses( $string,$allowed_tags);
 

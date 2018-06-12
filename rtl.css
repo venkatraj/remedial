@@ -1,3 +1,6 @@
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -2943,6 +2946,23 @@ blockquote, q {
         font-family: "FontAwesome"; }
     .site-footer .footer-widgets .widget_rss ul li {
       background: none; }
+  .site-footer .scroll-to-top {
+    background: #2591fd;
+    color: #fff;
+    bottom: 3%;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    background-clip: padding-box;
+    
+    border-radius: 4px;
+    transition: background-color 0.3s linear; }
+  .site-footer .scroll-to-top:hover {
+    background: rgba(37, 145, 253, 0.8); }
 
 .site-info {
   background: #2591fd; }
