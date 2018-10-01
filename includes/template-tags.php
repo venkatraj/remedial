@@ -629,6 +629,3 @@ if(!function_exists('remedial_before_header_video')) {
 	    <?php } 
 	}
 }
-
-
-
